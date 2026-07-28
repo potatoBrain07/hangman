@@ -1,0 +1,28 @@
+{
+    "version":"2.0.0",
+    "tasks": [
+        {
+            "label": "Run C++",
+            "type": "shell",
+            "command":"g++",
+            "args": [
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher":[],
+            "detail": "Compile the current C++ file"
+        },
+        {
+            "label": "Run Executable",
+            "type": "shell",
+            "command":"${fileDirname}/${fileBasenameNoExtension}",
+            "dependsOn":"Build and Run C++",
+            "problemMatcher":[]
+        }
+    ]
+}
